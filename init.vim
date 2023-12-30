@@ -13,13 +13,14 @@ set autoindent
 "Cursor higthligh current line
 set cursorline
 
+"Salir modo terminal
+tnoremap <Esc> <C-\><C-n>
 
 call plug#begin('/home/ice/.config/nvim/plugins')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'voldikss/vim-floaterm'
 	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 	Plug 'joshdick/onedark.vim'
-	Plug 'preservim/nerdtree'
 	Plug 'jiangmiao/auto-pairs'
   Plug 'matze/vim-move'
   Plug 'luochen1990/rainbow'
@@ -28,7 +29,9 @@ call plug#begin('/home/ice/.config/nvim/plugins')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'lewis6991/gitsigns.nvim'
-  Plug 'windwp/windline.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'daltonmenezes/aura-theme', { 'rtp': 'packages/neovim' }
 call plug#end()
 
 "Buffer navigation
@@ -45,18 +48,13 @@ inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d
 
-"Neerdtree
-nnoremap <F4> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-
 "Terminal
 let g:floaterm_keymap_kill='<F1>'
 map <F12> :FloatermNew! cd %:p:h && clear<CR>
 
 "Colorscheme
 set termguicolors
-colorscheme onedark "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+colorscheme aura-dark "onedark aura-dark catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 "Vim-move lines
 let g:move_key_modifier = 'C'
@@ -67,3 +65,4 @@ let g:rainbow_active = 1
 
 "require plugins configs
 lua require('plugs')
+
