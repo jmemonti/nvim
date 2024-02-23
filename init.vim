@@ -50,7 +50,7 @@ vnoremap <C-d> "+d
 
 "Terminal
 let g:floaterm_keymap_kill='<F1>'
-map <F12> :FloatermNew! cd %:p:h && clear<CR>
+map <F12> :FloatermNew<CR>
 
 "Colorscheme
 set termguicolors
