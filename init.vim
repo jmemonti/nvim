@@ -20,7 +20,6 @@ call plug#begin('/home/ice/.config/nvim/plugins')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'voldikss/vim-floaterm'
 	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-	Plug 'joshdick/onedark.vim'
 	Plug 'jiangmiao/auto-pairs'
   Plug 'matze/vim-move'
   Plug 'luochen1990/rainbow'
@@ -32,13 +31,13 @@ call plug#begin('/home/ice/.config/nvim/plugins')
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'nvim-tree/nvim-tree.lua'
   Plug 'daltonmenezes/aura-theme', { 'rtp': 'packages/neovim' }
+  Plug 'navarasu/onedark.nvim'
 call plug#end()
 
 "Buffer navigation
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <C-Right> :bnext<CR>
 nnoremap <leader> :bd<CR>
-
 
 "Coc Autocomplete                                                                                                                                                                         
 inoremap <expr> <c-space> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
@@ -54,7 +53,11 @@ map <F12> :FloatermNew<CR>
 
 "Colorscheme
 set termguicolors
-colorscheme aura-dark "onedark aura-dark catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
+colorscheme onedark "onedark aura-dark catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 "Vim-move lines
 let g:move_key_modifier = 'C'
