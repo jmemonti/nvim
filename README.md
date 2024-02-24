@@ -1,0 +1,1 @@
+Añadir nvim a .config/
